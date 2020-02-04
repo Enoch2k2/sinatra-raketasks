@@ -5,6 +5,7 @@ end
 task :drop_db do
   puts "Dropping Database"
   system('db/development.sqlite')
+  system('db/test.sqlite')
   puts "Dropped Database"
 end
 
