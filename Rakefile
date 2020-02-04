@@ -19,10 +19,10 @@ task :migrate_all do
 end
 
 task :reset_all do
-  Rake::Tasks[:drop_db].execute
-  Rake::Tasks[:migrate_all].execute
+  Rake::Task['drop_db'].invoke
+  Rake::Task['migrate_all'].invoke
   puts "Seeding Database..."
   system("rake db:seed")
   puts "Database Seeded, now starting server"
-  Rake::Tasks[:start_server].execute
+  Rake::Task['start_server'].invoke
 end
